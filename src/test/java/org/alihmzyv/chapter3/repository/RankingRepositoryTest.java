@@ -2,6 +2,9 @@ package org.alihmzyv.chapter3.repository;
 
 import org.alihmzyv.chapter3.entity.Person;
 import org.alihmzyv.chapter3.repository.impl.RankingRepositoryImpl;
+import org.alihmzyv.util.hibernate.SessionUtil;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -104,5 +107,36 @@ class RankingRepositoryTest {
         service.addRanking("S1", "O2", "Sk2", 2);
         Person p = service.findBestPersonFor("Sk1");
         assertEquals(p.getName(), "S3");
+    }
+
+    @Test
+    public void test() {
+        Thread t1 = new Thread(() -> {
+            Session session = SessionUtil.getSession();
+            try (session) {
+                Transaction tx = session.getTransaction();
+                tx.begin();
+                Person person = new Person();
+                person.setName("Second");
+                session.persist(person);
+                Thread.sleep(2000);
+                tx.commit();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        Thread t2 = new Thread(() -> {
+            Session session = SessionUtil.getSession();
+            try (session) {
+                Transaction tx = session.getTransaction();
+                tx.begin();
+                Person person = new Person();
+                person.setName("First");
+                session.persist(person);
+                tx.commit();
+            }
+        });
+        t2.run();
+        t1.run();
     }
 }

@@ -15,7 +15,7 @@ import lombok.experimental.FieldDefaults;
 @Entity
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Long id;
 
     String name;

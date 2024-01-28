@@ -12,7 +12,7 @@ import lombok.experimental.FieldDefaults;
 @Entity
 public class Ranking {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Long id;
     @ManyToOne
     Person subject;

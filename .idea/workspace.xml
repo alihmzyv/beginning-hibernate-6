@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94df818d-f82b-41e1-8bbd-6bac417310d8" name="Changes" comment="add more ranking tests. implement session util.">
-      <change afterPath="$PROJECT_DIR$/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter3/repository/PersonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter3/repository/RankingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter3/repository/SkillRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter3/repository/impl/PersonRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter3/repository/impl/RankingRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter3/repository/impl/SkillRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter3/repository/RankingRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+    <list default="true" id="94df818d-f82b-41e1-8bbd-6bac417310d8" name="Changes" comment="implement ranking repository to past tests in simple ways.">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/alihmzyv/util/hibernate/SessionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/util/hibernate/SessionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter3/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter3/entity/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter3/repository/RankingRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter3/repository/RankingRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,9 +71,9 @@
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2baUbDgNvvbTMVYljCmSeJeielp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -103,6 +96,7 @@
     "Gradle.RankingRepositoryTest.findBestForSkill.executor": "Run",
     "Gradle.RankingRepositoryTest.removeNonexistentRanking.executor": "Run",
     "Gradle.RankingRepositoryTest.removeRanking.executor": "Run",
+    "Gradle.RankingRepositoryTest.test.executor": "Run",
     "Gradle.RankingRepositoryTest.updateExistingRanking.executor": "Run",
     "Gradle.RankingRepositoryTest.updateNonexistentRanking.executor": "Run",
     "Gradle.RankingRepositoryTest.validateRankingAverage.executor": "Run",
@@ -120,7 +114,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/alihmzyv/study/java-persistence/hibernate/beginning-hibernate-6/src/test/resources",
+    "last_opened_file_path": "/home/alihmzyv/study/java-persistence/hibernate/beginning-hibernate-6",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -140,6 +134,7 @@
       <recent name="org.alihmzyv.chapter3.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/gradle" />
     </key>
@@ -155,8 +150,8 @@
       <recent name="org.alihmzyv.chapter3.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RankingRepositoryTest.findBestForNonexistentSkill">
-    <configuration name="RankingRepositoryTest.addRanking" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.RankingRepositoryTest.test">
+    <configuration name="RankingRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,55 +164,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.alihmzyv.chapter3.repository.RankingRepositoryTest.addRanking&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="RankingRepositoryTest.findAllRankings" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.alihmzyv.chapter3.repository.RankingRepositoryTest.findAllRankings&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="RankingRepositoryTest.findAllRankingsEmptySet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.alihmzyv.chapter3.repository.RankingRepositoryTest.findAllRankingsEmptySet&quot;" />
+            <option value="&quot;org.alihmzyv.chapter3.repository.RankingRepositoryTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -252,7 +199,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RankingRepositoryTest.findBestForSkill" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RankingRepositoryTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -265,7 +212,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.alihmzyv.chapter3.repository.RankingRepositoryTest.findBestForSkill&quot;" />
+            <option value="&quot;org.alihmzyv.chapter3.repository.RankingRepositoryTest.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -276,13 +223,59 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="RankingTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.alihmzyv.chapter3.RankingTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="beginning-hibernate-6 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RankingRepositoryTest.test" />
+        <item itemvalue="Gradle.RankingRepositoryTest" />
+        <item itemvalue="Gradle.beginning-hibernate-6 [build]" />
+        <item itemvalue="Gradle.RankingTest" />
         <item itemvalue="Gradle.RankingRepositoryTest.findBestForNonexistentSkill" />
-        <item itemvalue="Gradle.RankingRepositoryTest.findAllRankingsEmptySet" />
-        <item itemvalue="Gradle.RankingRepositoryTest.addRanking" />
-        <item itemvalue="Gradle.RankingRepositoryTest.findBestForSkill" />
-        <item itemvalue="Gradle.RankingRepositoryTest.findAllRankings" />
       </list>
     </recent_temporary>
   </component>
@@ -301,7 +294,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706452752941</updated>
-      <workItem from="1706452753983" duration="15348000" />
+      <workItem from="1706452753983" duration="15512000" />
+      <workItem from="1706477170844" duration="2137000" />
     </task>
     <task id="LOCAL-00001" summary="implement chapter 1: write simple, insert and select using both jdbc and hibernate.">
       <option name="closed" value="true" />
@@ -327,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706465808353</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implement ranking repository to past tests in simple ways.">
+      <option name="closed" value="true" />
+      <created>1706473590563</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706473590563</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +339,9 @@
     <MESSAGE value="implement chapter 1: write simple, insert and select using both jdbc and hibernate." />
     <MESSAGE value="add database docker compose file." />
     <MESSAGE value="add more ranking tests. implement session util." />
-    <option name="LAST_COMMIT_MESSAGE" value="add more ranking tests. implement session util." />
+    <MESSAGE value="implement ranking repository to past tests." />
+    <MESSAGE value="implement ranking repository to past tests in simple ways." />
+    <option name="LAST_COMMIT_MESSAGE" value="implement ranking repository to past tests in simple ways." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
