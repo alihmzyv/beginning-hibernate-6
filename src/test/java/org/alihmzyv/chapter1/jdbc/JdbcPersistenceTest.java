@@ -1,3 +1,5 @@
+package org.alihmzyv.chapter1.jdbc;
+
 import org.alihmzyv.chapter1.jdbc.entity.MessageEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

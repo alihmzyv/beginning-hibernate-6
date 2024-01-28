@@ -1,4 +1,5 @@
-import org.alihmzyv.chapter1.hibernate.Message;
+package org.alihmzyv.chapter1.hibernate;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,6 +23,7 @@ public class HibernatePersistenceTest {
                         .configure()
                         .build();
         factory = new MetadataSources(registry)
+                .addAnnotatedClass(Message.class)
                 .buildMetadata()
                 .buildSessionFactory();
     }
