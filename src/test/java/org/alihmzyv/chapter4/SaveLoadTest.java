@@ -1,5 +1,6 @@
 package org.alihmzyv.chapter4;
 
+import org.alihmzyv.chapter4.entity.SimpleObject;
 import org.alihmzyv.util.hibernate.SessionUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

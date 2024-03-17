@@ -4,7 +4,10 @@ import org.alihmzyv.chapter1.hibernate.Message;
 import org.alihmzyv.chapter3.entity.Person;
 import org.alihmzyv.chapter3.entity.Ranking;
 import org.alihmzyv.chapter3.entity.Skill;
-import org.alihmzyv.chapter4.SimpleObject;
+import org.alihmzyv.chapter4.entity.Email;
+import org.alihmzyv.chapter4.entity.SimpleObject;
+import org.alihmzyv.chapter4.entity.orphan.Book;
+import org.alihmzyv.chapter4.entity.orphan.Library;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -27,7 +30,8 @@ public class SessionUtil {
                         .configure()
                         .build();
         sessionFactory = new MetadataSources(registry)
-                .addAnnotatedClasses(Person.class, Skill.class, Ranking.class, Message.class, SimpleObject.class)
+                .addAnnotatedClasses(Person.class, Skill.class, Ranking.class, Message.class, SimpleObject.class, Email.class,
+                        Book.class, Library.class)
                 .buildMetadata()
                 .buildSessionFactory();
     }

@@ -1,7 +1,10 @@
 package org.alihmzyv.chapter1.hibernate;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.alihmzyv.chapter4.entity.Email;
 
 import java.util.Objects;
 
@@ -16,6 +19,9 @@ public class Message {
 
     @Column(nullable = false)
     String text;
+
+    @OneToOne(mappedBy = "message")
+    Email email;
 
     @Override
     public boolean equals(Object o) {

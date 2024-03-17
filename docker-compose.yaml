@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres:latest
+    image: postgres
     container_name: jpa-hibernate-book
     environment:
       POSTGRES_DB: jpa-hibernate-book

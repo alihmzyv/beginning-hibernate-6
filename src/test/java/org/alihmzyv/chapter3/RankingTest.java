@@ -83,7 +83,7 @@ public class RankingTest {
     }
 
     private Person findPerson(Session session, String name) {
-        return session.createQuery("from Person p where p.name =: name", Person.class)
+        return session.createQuery("from Person2 p where p.name =: name", Person.class)
                 .setParameter("name", name)
                 .uniqueResult();
     }

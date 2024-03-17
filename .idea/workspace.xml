@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94df818d-f82b-41e1-8bbd-6bac417310d8" name="Changes" comment="add docker compose file for database. change id generation strategy to sequence.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter4/SimpleObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/SaveLoadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter4/entity/Email.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter4/entity/orphan/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter4/entity/orphan/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/OrphanRemovalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/TestCascadeFailure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/general/TestStates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/general/ValidateSimpleObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter1/hibernate/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter1/hibernate/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter4/SimpleObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/chapter4/entity/SimpleObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/alihmzyv/util/hibernate/SessionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/alihmzyv/util/hibernate/SessionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter3/RankingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter3/RankingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/SaveLoadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/SaveLoadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +98,12 @@
     "Gradle.HibernatePersistenceTest.executor": "Run",
     "Gradle.HibernatePersistenceTest.readMessage.executor": "Run",
     "Gradle.JdbcPersistenceTest.executor": "Run",
+    "Gradle.MergeTest.executor": "Run",
+    "Gradle.MergeTest.testFlush.executor": "Debug",
+    "Gradle.MergeTest.testMerge.executor": "Run",
+    "Gradle.MergeTest.testRefresh.executor": "Run",
+    "Gradle.OrphanRemovalTest.deleteLibrary.executor": "Debug",
+    "Gradle.OrphanRemovalTest.orphanRemovalTest.executor": "Debug",
     "Gradle.PersistenceTest.executor": "Run",
     "Gradle.PersistenceTest.readMessage.executor": "Run",
     "Gradle.RankingRepositoryTest.addRanking.executor": "Run",
@@ -106,6 +124,9 @@
     "Gradle.RankingTest.testRankings.executor": "Run",
     "Gradle.SaveLoadTest.crazyThoughts.executor": "Run",
     "Gradle.SaveLoadTest.testSaveLoad.executor": "Run",
+    "Gradle.TestCascadeFailure.testCascadeFailure.executor": "Run",
+    "Gradle.TestStates.testDelete.executor": "Debug",
+    "Gradle.beginning-hibernate-6 [:Test.main()].executor": "Debug",
     "Gradle.beginning-hibernate-6 [build].executor": "Run",
     "Gradle.beginning-hibernate-6 [clean].executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -113,6 +134,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "kotlin-language-version-configured": "true",
@@ -131,6 +153,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.alihmzyv.chapter4.entity.orphan" />
       <recent name="org.alihmzyv.chapter3.repository.impl" />
       <recent name="org.alihmzyv.chapter3.repository" />
       <recent name="org.alihmzyv.chapter3.entity" />
@@ -152,8 +175,21 @@
       <recent name="org.alihmzyv.chapter3.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SaveLoadTest.testSaveLoad">
-    <configuration name="RankingRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.OrphanRemovalTest.orphanRemovalTest">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.alihmzyv.flushhibernatedoc.Test" />
+      <module name="beginning-hibernate-6.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.alihmzyv.flushhibernatedoc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrphanRemovalTest.deleteLibrary" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -166,7 +202,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.alihmzyv.chapter3.repository.RankingRepositoryTest&quot;" />
+            <option value="&quot;org.alihmzyv.chapter4.OrphanRemovalTest.deleteLibrary&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -177,7 +213,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RankingRepositoryTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="OrphanRemovalTest.orphanRemovalTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -190,7 +226,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.alihmzyv.chapter3.repository.RankingRepositoryTest.test&quot;" />
+            <option value="&quot;org.alihmzyv.chapter4.OrphanRemovalTest.orphanRemovalTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -201,7 +237,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SaveLoadTest.crazyThoughts" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestCascadeFailure.testCascadeFailure" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -214,7 +250,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.alihmzyv.chapter4.SaveLoadTest.crazyThoughts&quot;" />
+            <option value="&quot;org.alihmzyv.chapter4.TestCascadeFailure.testCascadeFailure&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -225,7 +261,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SaveLoadTest.testSaveLoad" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestStates.testDelete" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -238,7 +274,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.alihmzyv.chapter4.SaveLoadTest.testSaveLoad&quot;" />
+            <option value="&quot;org.alihmzyv.chapter4.general.TestStates.testDelete&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -247,37 +283,15 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="beginning-hibernate-6 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SaveLoadTest.testSaveLoad" />
-        <item itemvalue="Gradle.SaveLoadTest.crazyThoughts" />
-        <item itemvalue="Gradle.RankingRepositoryTest.test" />
-        <item itemvalue="Gradle.RankingRepositoryTest" />
-        <item itemvalue="Gradle.beginning-hibernate-6 [build]" />
+        <item itemvalue="Gradle.OrphanRemovalTest.orphanRemovalTest" />
+        <item itemvalue="Gradle.OrphanRemovalTest.deleteLibrary" />
+        <item itemvalue="Gradle.TestCascadeFailure.testCascadeFailure" />
+        <item itemvalue="Gradle.TestStates.testDelete" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -366,6 +380,26 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/general/TestStates.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/alihmzyv/flushhibernatedoc/Test.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/general/TestStates.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/alihmzyv/chapter4/OrphanRemovalTest.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

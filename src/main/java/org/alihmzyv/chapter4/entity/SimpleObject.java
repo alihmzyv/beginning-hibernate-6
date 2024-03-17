@@ -1,4 +1,4 @@
-package org.alihmzyv.chapter4;
+package org.alihmzyv.chapter4.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
